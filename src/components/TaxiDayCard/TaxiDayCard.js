@@ -1,9 +1,10 @@
 import { Container, Row, Col, Card } from 'react-bootstrap'
 import order_dis from '../../assets/img/order_dis.png'
 import distance_dis from '../../assets/img/distance_dis.png'
+// import order from '../../assets/img/order.png'
+// import distance from '../../assets/img/distance.png'
 export const TaxiDayCard = () => {
   return (
-
     <Container>
       <h1 className="text-center my-4">One Day Taxi Statistics - Shenzhen</h1>
       <h4 className="text-right my-4">2013-10-22</h4>
@@ -21,8 +22,8 @@ export const TaxiDayCard = () => {
           <Card>
             <Card.Body>
               <Card.Title style={{ color: 'black' }}>Average Time For One Order</Card.Title>
-              <Card.Text style={{ color: 'black', fontSize: '35px' }}>16 minutes 57 seconds</Card.Text>
-              <Card.Text style={{ color: 'grey', fontSize: '12px' }}>Longest Trip Takes </Card.Text>
+              <Card.Text style={{ color: 'black', fontSize: '35px' }}>16min 57s</Card.Text>
+              <Card.Text style={{ color: 'grey', fontSize: '12px' }}>Longest Order took 4h 22min 17s</Card.Text>
             </Card.Body>
           </Card>
         </Col>
@@ -55,5 +56,8 @@ export const TaxiDayCard = () => {
         </Col>
       </Row>
     </Container>
+
+
+
   )
 }

@@ -1,5 +1,5 @@
 import { Offcanvas, Button, Form, ToastContainer, Toast, InputGroup, Spinner } from 'react-bootstrap'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import helpers from '../../utils/api'
 
 export const ChatCanvas = ({ show, handleClose }) => {
@@ -8,6 +8,21 @@ export const ChatCanvas = ({ show, handleClose }) => {
   const [start, setStart] = useState('')
   const [end, setEnd] = useState('')
   const [prompt, setPrompt] = useState(null)
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      if (event.key === 'Enter' && show) {
+        console.log('Enter key pressed')
+        handleChat()
+      }
+    }
+
+    document.addEventListener('keydown', handleKeyPress)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress)
+    }
+  }, [])
 
   const handleChat = async () => {
     if (start === '' | end === '') {
@@ -72,11 +87,12 @@ export const ChatCanvas = ({ show, handleClose }) => {
 
   return (
     <>
-      <Offcanvas show={show} onHide={handleClose}>
+      <Offcanvas show={show} onHide={handleClose} scroll={true}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title style={{ color: 'black' }}>Chat</Offcanvas.Title>
+          <Offcanvas.Title style={{ color: 'black' }}>Chat
+          </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body style={{ color: 'black' }}>
+        <Offcanvas.Body style={{ color: 'black', maxHeight: '3000px', overflowY: 'auto' }}>
           <h4 style={{ color: 'grey' }}>It takes around half a minute to get result :) </h4>
           <br />
           {chatAva ? <div className='form-wrapper' style={{ position: 'fixed', bottom: "5%" }}>

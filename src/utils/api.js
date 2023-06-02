@@ -10,7 +10,7 @@ function unicodeToChar (text) {
 const helpers = {
   fetchCsvAsString: async function (fileName) {
     try {
-      const response = await fetch(API_URL + '/file/' + fileName)
+      const response = await fetch(API_URL + 'file/' + fileName)
       if (!response.ok) {
         throw new Error(`Failed to fetch CSV file (${response.status} ${response.statusText})`)
       }

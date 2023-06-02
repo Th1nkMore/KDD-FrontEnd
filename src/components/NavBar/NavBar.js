@@ -47,8 +47,8 @@ export const NavBar = ({ handleShow }) => {
         <Navbar.Brand href="#home">KDD</Navbar.Brand>
         <Nav className="me-auto">
           <Nav.Link href="#Home">Home</Nav.Link>
-          <Nav.Link href="#Micro">Micro</Nav.Link>
-          <Nav.Link href="#Macro">Macro</Nav.Link>
+          <Nav.Link href="#Map">Map</Nav.Link>
+          <Nav.Link href="#Statistics">Statistics</Nav.Link>
           <Button style={{ position: "absolute", right: "10%" }} onClick={handleShow}>Chat</Button>
         </Nav>
       </Container>

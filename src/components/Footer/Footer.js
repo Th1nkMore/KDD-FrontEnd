@@ -2,11 +2,6 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 
 export const Footer = () => {
-  const API_URL = 'http://10.16.49.15:5000/file/'
-  const handleDownload = (fileName) => {
-    const fileUrl = API_URL + fileName
-    window.open(fileUrl, '_blank')
-  }
 
   return (
 
@@ -22,8 +17,8 @@ export const Footer = () => {
             <h5>Links</h5>
             <ul className="list-unstyled">
               <li><a href="/">Home</a></li>
-              <li><a href="/about">About</a></li>
-              <li><a href="/contact">Contact</a></li>
+              <li><a href="/Map">Map</a></li>
+              <li><a href="/Statistics">Statistics</a></li>
             </ul>
           </Col>
           <Col md={3}>
